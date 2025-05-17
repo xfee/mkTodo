@@ -1,0 +1,17 @@
+[
+    {"text": "5/20 - 准备季度财务报表", "completed": false, "priority": "高", "deadline": "2025-05-20"},
+    {"text": "5/18 跟进客户A的需求变更", "completed": true, "priority": "中", "deadline": "2025-05-18"},
+    {"text": "项目XYZ - 修复生产环境数据库连接问题", "completed": false, "priority": "高", "deadline": "2025-05-19", "assignee": "技术组"},
+    {"text": "UI优化 - 调整移动端响应式布局", "completed": false, "priority": "中", "deadline": "2025-05-25", "assignee": "前端组"},
+    {"text": "数据分析 - 完成用户行为报告", "completed": false, "priority": "中", "deadline": "2025-05-22"},
+    {"text": "系统监控 - 排查CPU使用率异常", "completed": false, "priority": "高", "deadline": "2025-05-18", "notes": "已经影响到生产系统性能"},
+    {"text": "基础设施 - 完成测试环境迁移", "completed": true, "priority": "中", "deadline": "2025-05-15", "notes": "已迁移到新的云服务器"},
+    {"text": "技术问题 - 解决消息队列堆积问题", "completed": false, "priority": "高", "deadline": "2025-05-19", "assignee": "后端组"},
+    {"text": "运维任务 - 部署数据备份自动化脚本", "completed": true, "priority": "低", "deadline": "2025-05-16"},
+    {"text": "5/21 - 参加产品规划会议", "completed": false, "priority": "中", "deadline": "2025-05-21", "location": "3号会议室"},
+    {"text": "代码审查 - 新功能合并请求", "completed": false, "priority": "中", "deadline": "2025-05-20", "assignee": "技术组"},
+    {"text": "5/23 - 与供应商B讨论合作方案", "completed": false, "priority": "高", "deadline": "2025-05-23", "location": "线上会议"},
+    {"text": "文档更新 - 完善API接口说明", "completed": false, "priority": "低", "deadline": "2025-05-26"},
+    {"text": "性能优化 - 减少首页加载时间", "completed": false, "priority": "中", "deadline": "2025-05-24", "assignee": "前端组"},
+    {"text": "安全审计 - 完成季度安全检查", "completed": false, "priority": "高", "deadline": "2025-05-30", "notes": "需要提交审计报告"}
+]
