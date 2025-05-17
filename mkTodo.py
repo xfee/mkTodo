@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import ttk, simpledialog
 import json
 import os
+import ctypes
+import sys
 
 class mkTodo:
     def __init__(self, root):
@@ -27,7 +29,7 @@ class mkTodo:
         
         # 是否在待办事项前添加时间前缀
         self.add_time_prefix = True
-        
+
         # 创建界面
         self.create_widgets()
         
@@ -310,6 +312,39 @@ if __name__ == "__main__":
         
     root = tk.Tk()
     root.withdraw()  # 先隐藏窗口
+    
+
+    
+    # 设置应用ID (必须在创建任何窗口之前)
+    myappid = 'mkTodo.todolist.1.0'  # 任意字符串，但需要唯一
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+    
+    # 设置图标路径
+    icon_path = 'images/favicon.ico'
+    if getattr(sys, 'frozen', False):
+        # 如果是打包后的exe，使用相对于exe的路径
+        base_dir = os.path.dirname(sys.executable)
+        # 尝试多个可能的图标路径
+        possible_paths = [
+            os.path.join(base_dir, 'images', 'favicon.ico'),
+            os.path.join(base_dir, '_internal', 'images', 'favicon.ico')
+        ]
+        
+        # 使用第一个存在的路径
+        for path in possible_paths:
+            if os.path.exists(path):
+                icon_path = path
+                print(f"找到图标文件: {path}")
+                break
+        
+    # 确保图标文件存在
+    if os.path.exists(icon_path):
+        # 设置窗口图标
+        root.iconbitmap(default=icon_path)
+        # 确保任务栏图标与窗口图标一致
+        root.wm_iconbitmap(icon_path)
+    else:
+        print(f"图标文件不存在: {icon_path}")
     
     app = mkTodo(root)
     

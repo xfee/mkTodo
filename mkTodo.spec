@@ -5,7 +5,7 @@ a = Analysis(
     ['mkTodo.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('images/favicon.ico', 'images')],  # 添加图标文件到打包数据中
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -32,6 +32,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon=r'images\favicon.ico'
 )
 coll = COLLECT(
     exe,
