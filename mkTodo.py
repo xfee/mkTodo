@@ -304,10 +304,8 @@ class mkTodo:
             pass  # 忽略可能的错误
 
 if __name__ == "__main__":
-    import sys
     if getattr(sys, 'frozen', False):
         # 如果是打包后的exe运行
-        import os
         os.environ['PYTHONOPTIMIZE'] = '1'  # 优化Python运行时
         
     root = tk.Tk()
