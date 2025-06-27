@@ -67,13 +67,19 @@
    pyinstaller mkTodo.spec
    
    # 方式二：文件夹模式【推荐】。文件夹模式启动时无需解压exe，具有更快的启动速度
-   pyinstaller --windowed --name=mkTodo --clean  mkTodo.py
+   pyinstaller --windowed --name=mkTodo --clean --icon=images/favicon.ico mkTodo.py
    
    # 方式三：单文件模式。由于单文件模式启动时需要解压exe，启动比文件夹更慢一些
    pyinstaller --windowed --name=mkTodo --clean  --onefile mkTodo.py
-   ```
    
+   # 方式四： 使用nuitka(推荐，打包慢，但打包出的文件更小，启动速度更快)
+   nuitka --standalone --windows-disable-console --output-dir=out --windows-icon-from-ico=images/favicon.ico mkTodo.py
+
+   ```
+
    > 注：项目中的 `mkTodo.spec` 文件是 PyInstaller 的配置文件，包含了应用的打包设置（如图标、名称等）。有了这个文件，只需使用 `pyinstaller mkTodo.spec` 命令即可重新构建应用，无需每次都指定所有参数。
+   > 注2： 如果打包不生效，可删除mkTodo.spec 后重新打包。
+   > Nuitka 是一个 Python → C/C++ 编译器，比 pyinstaller 更底层，会把 Python 代码编译成真正的机器代码，生成性能更好、更难反编译的可执行程序,但打包速度非常慢。尤其首次需要下载编译器。
 
 ## 注意事项
 

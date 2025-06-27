@@ -6,6 +6,7 @@ import ctypes
 import sys
 
 class mkTodo:
+    # 初始化
     def __init__(self, root):
         self.root = root
         self.root.title("mkTodo - 秒开待办")
@@ -35,7 +36,7 @@ class mkTodo:
         
         # 初始化hover状态
         self.current_hover_item = None 
-        
+    
     def create_widgets(self):
         # 输入框容器
         input_frame = tk.Frame(self.root, bg="#F5F5F5")
@@ -136,6 +137,8 @@ class mkTodo:
     def on_double_click(self, event):
         # 获取点击位置对应的项目索引
         index = self.todo_listbox.nearest(event.y)
+        print(self,index,event.y)
+
         if 0 <= index < self.todo_listbox.size():
             # 获取项目的边界框
             bbox = self.todo_listbox.bbox(index)
